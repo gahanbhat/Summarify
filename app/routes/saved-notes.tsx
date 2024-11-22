@@ -12,10 +12,11 @@ const SavedNotes: FC = () => {
 
   // Fetch saved notes from the backend
   useEffect(() => {
-    const backendUrl = import.meta.env.BACKEND_URL;
     const fetchNotes = async () => {
       try {
-        const response = await fetch(`${backendUrl}/notes`); // API URL
+        const response = await fetch(
+          `https://summarify-backend.onrender.com/notes`
+        ); // API URL
         if (!response.ok) {
           throw new Error("Failed to fetch notes");
         }

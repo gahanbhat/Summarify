@@ -7,7 +7,6 @@ const Editor = () => {
   const [isPreviewVisible, setIsPreviewVisible] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isSummarizing, setIsSummarizing] = useState(false);
-  const backendUrl = import.meta.env.BACKEND_URL;
 
   // Toggle the preview visibility
   const togglePreview = () => {
@@ -23,13 +22,16 @@ const Editor = () => {
 
     setIsSummarizing(true);
     try {
-      const response = await fetch(`http://localhost:5000/summarize`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: text }),
-      });
+      const response = await fetch(
+        `https://summarify-backend.onrender.com/summarize`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: text }),
+        }
+      );
 
       const data = await response.json();
 
@@ -55,13 +57,16 @@ const Editor = () => {
 
     setIsSaving(true);
     try {
-      const response = await fetch(`${backendUrl}/save`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ content: text }),
-      });
+      const response = await fetch(
+        `https://summarify-backend.onrender.com/save`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ content: text }),
+        }
+      );
 
       const data = await response.json();
 
