@@ -10,8 +10,8 @@ dotenv.config(); // Load environment variables
 
 const app = express();
 const allowedOrigins = [
-  "http://localhost:5173", // Local development
-  // Production domain
+  "http://localhost:5173",
+  "https://summarify-jet.vercel.app",
 ];
 app.use(cors({ origin: allowedOrigins }));
 
