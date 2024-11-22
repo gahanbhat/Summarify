@@ -7,6 +7,7 @@ const Editor = () => {
   const [isPreviewVisible, setIsPreviewVisible] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isSummarizing, setIsSummarizing] = useState(false);
+  const backendUrl = process.env.BACKEND_URL;
 
   // Toggle the preview visibility
   const togglePreview = () => {
@@ -22,7 +23,6 @@ const Editor = () => {
 
     setIsSummarizing(true);
     try {
-      const backendUrl = process.env.BACKEND_URL;
       const response = await fetch(`${backendUrl}/summarize`, {
         method: "POST",
         headers: {
@@ -55,7 +55,6 @@ const Editor = () => {
 
     setIsSaving(true);
     try {
-      const backendUrl = process.env.BACKEND_URL;
       const response = await fetch(`${backendUrl}/save`, {
         method: "POST",
         headers: {
