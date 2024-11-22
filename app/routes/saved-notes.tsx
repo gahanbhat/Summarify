@@ -14,7 +14,8 @@ const SavedNotes: FC = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/notes`); // API URL
+        const backendUrl = process.env.BACKEND_URL;
+        const response = await fetch(`${backendUrl}/notes`); // API URL
         if (!response.ok) {
           throw new Error("Failed to fetch notes");
         }

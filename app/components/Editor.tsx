@@ -22,7 +22,8 @@ const Editor = () => {
 
     setIsSummarizing(true);
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/summarize`, {
+      const backendUrl = process.env.BACKEND_URL;
+      const response = await fetch(`${backendUrl}/summarize`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +55,8 @@ const Editor = () => {
 
     setIsSaving(true);
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/save`, {
+      const backendUrl = process.env.BACKEND_URL;
+      const response = await fetch(`${backendUrl}/save`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
