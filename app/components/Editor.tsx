@@ -7,7 +7,7 @@ const Editor = () => {
   const [isPreviewVisible, setIsPreviewVisible] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isSummarizing, setIsSummarizing] = useState(false);
-  const backendUrl = process.env.BACKEND_URL;
+  const backendUrl = import.meta.env.BACKEND_URL;
 
   // Toggle the preview visibility
   const togglePreview = () => {
@@ -23,7 +23,7 @@ const Editor = () => {
 
     setIsSummarizing(true);
     try {
-      const response = await fetch(`${backendUrl}/summarize`, {
+      const response = await fetch(`http://localhost:5000/summarize`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,7 +12,7 @@ const SavedNotes: FC = () => {
 
   // Fetch saved notes from the backend
   useEffect(() => {
-    const backendUrl = process.env.BACKEND_URL;
+    const backendUrl = import.meta.env.BACKEND_URL;
     const fetchNotes = async () => {
       try {
         const response = await fetch(`${backendUrl}/notes`); // API URL

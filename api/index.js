@@ -9,7 +9,12 @@ import dotenv from "dotenv";
 dotenv.config(); // Load environment variables
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173", // Local development
+  // Production domain
+];
+app.use(cors({ origin: allowedOrigins }));
+
 app.use(express.json());
 
 // Connect to MongoDB
