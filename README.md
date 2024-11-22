@@ -1,40 +1,16 @@
-# Welcome to Remix!
+# **Summarify**
+This project is a Text Summarization App built with Remix for the frontend and Express for the backend. It uses Hugging Face's BART model for text summarization and MongoDB to store notes.
+https://summarify-jet.vercel.app
 
-- 📖 [Remix docs](https://remix.run/docs)
+## **Features**
+Text Summarization: The app uses Hugging Face's facebook/bart-large-cnn model to generate summaries from the input text.
+Notes Management: Users can save, view, and share their summarized notes.
+Markdown File Upload: Users can upload Markdown files to be summarized.
+Grammar Checking: Integrated grammar correction for enhanced note-taking.
 
-## Development
+## **Deployment**
+### **Frontend Deployment (Vercel)**
+The frontend is deployed on Vercel. Once your changes are made, push them to your Git repository, and Vercel will handle the deployment automatically.
 
-Run the dev server:
-
-```shellscript
-npm run dev
-```
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+### **Backend Deployment (Render)**
+The backend is deployed on Render. The backend API is hosted on (https://summarify-backend.onrender.com) in development and can be accessed in production through the Render URL.
